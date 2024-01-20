@@ -21,10 +21,9 @@ export default function OAuth() {
                 name: result.user.displayName,
                 email: result.user.email,
                 photo: result.user.photoURL,
-            })
+            }),
         })
             const data = await res.json();
-            console.log(data)
             dispatch(signInSuccess(data))
         } catch (error) {
             console.log('could not login with google', error);

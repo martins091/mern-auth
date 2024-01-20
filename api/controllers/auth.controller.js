@@ -40,16 +40,13 @@ export const google = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-        expiresIn: "1h",
-      });
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
       const { password: hashedPassword, ...rest } = user._doc;
       const expiryDate = new Date(Date.now() + 3600000); // 1 hour
       res.cookie("access_token", token, {
         httpOnly: true,
         expires: expiryDate,
       }).status(200).json(rest)
-      return res.status(200).json({ token, ...rest });
     } else {
       const generatedPassword =
         Math.random().toString(36).slice(-8) +
