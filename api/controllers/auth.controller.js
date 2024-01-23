@@ -11,7 +11,6 @@ export const signup = async (req, res, next) => {
   try {
     await newUser.save();
     res.status(201).json({ message: "user created successfully" });
-    // console.log(hashedPassword);
   } catch (error) {
     next(errorHandler(300, "something went wrong"));
   }
