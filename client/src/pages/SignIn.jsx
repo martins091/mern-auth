@@ -49,14 +49,14 @@ export default function SignIn() {
           type="email"
           placeholder="Email"
           id="email"
-          className="bg-slate-100 p-3 rounded-lg"
+          className="bg-slate-100 shadow-sm p-3 rounded-lg"
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="password"
           id="password"
-          className="bg-slate-100 p-3 rounded-lg"
+          className="bg-slate-100 p-3 shadow-sm rounded-lg"
           onChange={handleChange}
         />
         <button

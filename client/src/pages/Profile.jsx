@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
+import { BeatLoader } from "react-spinners";
+import { toast } from "react-toastify";
 import {
   getDownloadURL,
   getStorage,
